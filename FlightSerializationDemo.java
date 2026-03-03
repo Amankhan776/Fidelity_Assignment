@@ -43,15 +43,13 @@ public class FlightSerializationDemo {
             Flight f1 = new Flight(101, "Indigo", "Delhi", "Mumbai");
  
            
-            ObjectOutputStream oos =
-                    new ObjectOutputStream(new FileOutputStream("Flight.dat"));
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Flight.dat"));
  
             oos.writeObject(f1);
             oos.close();
  
             
-            ObjectInputStream ois =
-                    new ObjectInputStream(new FileInputStream("Flight.dat"));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Flight.dat"));
  
             Flight f2 = (Flight) ois.readObject();
             ois.close();
